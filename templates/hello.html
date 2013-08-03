@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<form   action = "" method ='post' class='form-search'>
+	{% csrf_token %}
+	<table class = ''>
+	    {{ f }}
+	</table>
+	<input class='btn btn-danger' type="submit" value="发送">
+</form>
+
+<hr>
+
+{% for i in l1%}
+<li>{{i.content}}<a class='btn' href='/delete?id={{i.id}}'>删除</a></li>
+{%endfor%}
+
+{% endblock %}
